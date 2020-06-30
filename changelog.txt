@@ -4,12 +4,11 @@
 - Optimized the map
 - Added custom streaming props
 - Removed some barriers from the main city, you can now drive into the area
-
+- Recalculated All Flags
+- Recalculated All Extensions
 
 To Do
 - Continue Optimization
 - Add more bags trough the map
 - Add more vehicles
 - Add 6 Safezones (DeadOrAlive5) 
-- Recalculated All Flags
-- Recalculated All Extensions
