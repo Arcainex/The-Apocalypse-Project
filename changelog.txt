@@ -1,14 +1,26 @@
-- Fixed duplicated Trees
-- Fixed black vehicles without skin
-- Fix smoke issues
-- Optimized the map
-- Added custom streaming props
-- Removed some barriers from the main city, you can now drive into the area
-- Recalculated All Flags
-- Recalculated All Extensions
+Changelog v0.3 
 
-To Do
-- Continue Optimization
-- Add more bags trough the map
-- Add more vehicles
-- Add 6 Safezones (DeadOrAlive5) 
+- Optimized some props up north
+- Fixed the tunnel (Didn't actually fixed it. Just covered the entrances til someone helps me fix it)
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- PROJECT CHANGELOG - 
+
+- Added CodeWalker project File to anyone willing to help. 
+Note: Anyone that wants to help please do a pull-request on github. I'll be looking towards contributors.
+
+If you need any help contact me on Discord XanderP#6037
