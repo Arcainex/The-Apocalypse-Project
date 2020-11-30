@@ -1,0 +1,62 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>deadoralive\stream\airport.ymap</Item>
+    <Item>deadoralive\stream\au.ymap</Item>
+    <Item>deadoralive\stream\chinatown.ymap</Item>
+    <Item>deadoralive\stream\city.ymap</Item>
+    <Item>deadoralive\stream\freeway.ymap</Item>
+    <Item>deadoralive\stream\humanelabs.ymap</Item>
+    <Item>deadoralive\stream\motel.ymap</Item>
+    <Item>deadoralive\stream\road.ymap</Item>
+    <Item>deadoralive\stream\rodeo.ymap</Item>
+    <Item>deadoralive\stream\sandy.ymap</Item>
+    <Item>deadoralive\stream\street.ymap</Item>
+    <Item>deadoralive\stream\tunnel.ymap</Item>
+    <Item>deadoralive2\stream\m1.ymap</Item>
+    <Item>deadoralive2\stream\m2.ymap</Item>
+    <Item>deadoralive2\stream\m3.ymap</Item>
+    <Item>deadoralive2\stream\m4.ymap</Item>
+    <Item>deadoralive2\stream\m5.ymap</Item>
+    <Item>deadoralive2\stream\m6.ymap</Item>
+    <Item>deadoralive2\stream\m7.ymap</Item>
+    <Item>deadoralive2\stream\m8.ymap</Item>
+    <Item>deadoralive2\stream\m9.ymap</Item>
+    <Item>deadoralive2\stream\m10.ymap</Item>
+    <Item>deadoralive3\stream\barnfire.ymap</Item>
+    <Item>deadoralive3\stream\citycentral.ymap</Item>
+    <Item>deadoralive3\stream\dignity village.ymap</Item>
+    <Item>deadoralive3\stream\factory.ymap</Item>
+    <Item>deadoralive3\stream\farm.ymap</Item>
+    <Item>deadoralive3\stream\highway.ymap</Item>
+    <Item>deadoralive3\stream\junkyard.ymap</Item>
+    <Item>deadoralive3\stream\lost mc.ymap</Item>
+    <Item>deadoralive3\stream\river.ymap</Item>
+    <Item>deadoralive3\stream\road.ymap</Item>
+    <Item>deadoralive3\stream\thedefender.ymap</Item>
+    <Item>deadoralive3\stream\thedefender2.ymap</Item>
+    <Item>deadoralive3\stream\vanilla.ymap</Item>
+    <Item>deadoralive3\stream\zombie 1.ymap</Item>
+    <Item>deadoralive3\stream\zombiebase.ymap</Item>
+    <Item>nw_mine\stream\lr_cs6_08_strm_0.ymap</Item>
+    <Item>paletobay\stream\paleto.ymap</Item>
+    <Item>road\stream\road.ymap</Item>
+    <Item>road\stream\road2.ymap</Item>
+    <Item>subway\stream\metro.ymap</Item>
+    <Item>thefallofthebridge\stream\hei_po1_03_critical_0.ymap</Item>
+    <Item>thefallofthebridge\stream\hei_po1_03_strm_0.ymap</Item>
+    <Item>thefallofthebridge\stream\hei_po1_occl_01.ymap</Item>
+    <Item>thefallofthebridge\stream\po1_03_critical_0.ymap</Item>
+    <Item>thefallofthebridge\stream\po1_03_strm_0.ymap</Item>
+    <Item>thefallofthebridge\stream\po1_occl_01.ymap</Item>
+    <Item>thefallofthebridge\stream\the fall of the bridge.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames />
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+</CodeWalkerProject>
