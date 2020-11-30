@@ -51,6 +51,25 @@
     <Item>thefallofthebridge\stream\po1_03_strm_0.ymap</Item>
     <Item>thefallofthebridge\stream\po1_occl_01.ymap</Item>
     <Item>thefallofthebridge\stream\the fall of the bridge.ymap</Item>
+    <Item>deadoralive4\stream\base1.ymap</Item>
+    <Item>deadoralive4\stream\base2.ymap</Item>
+    <Item>deadoralive4\stream\basef1.ymap</Item>
+    <Item>deadoralive4\stream\basef2.ymap</Item>
+    <Item>deadoralive4\stream\cabin1.ymap</Item>
+    <Item>deadoralive4\stream\cabin2.ymap</Item>
+    <Item>deadoralive4\stream\chilliadbase1.ymap</Item>
+    <Item>deadoralive4\stream\chilliadbase2.ymap</Item>
+    <Item>deadoralive4\stream\czombie.ymap</Item>
+    <Item>deadoralive4\stream\evacpoint.ymap</Item>
+    <Item>deadoralive4\stream\forest1.ymap</Item>
+    <Item>deadoralive4\stream\forest2.ymap</Item>
+    <Item>deadoralive4\stream\forest3.ymap</Item>
+    <Item>deadoralive4\stream\highway2.ymap</Item>
+    <Item>deadoralive4\stream\hospital.ymap</Item>
+    <Item>deadoralive4\stream\marketnorth.ymap</Item>
+    <Item>deadoralive4\stream\rebel.ymap</Item>
+    <Item>deadoralive4\stream\toweraddm.ymap</Item>
+    <Item>deadoralive4\stream\walkingdeadroad.ymap</Item>
   </YmapFilenames>
   <YtypFilenames />
   <YbnFilenames />
