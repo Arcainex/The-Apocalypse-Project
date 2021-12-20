@@ -1,0 +1,15 @@
+resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+
+this_is_a_map 'yes'
+
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_7.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_10.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_22.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_28.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_38.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_46.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_49.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_51.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_66.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/cs2_roadsb_interior_cs2_roadsb_tunnel_01.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/cs2_roadsb_interior_cs2_roadsb_tunnel_03.ytyp'
