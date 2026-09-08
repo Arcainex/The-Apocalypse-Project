@@ -1,4 +1,5 @@
 local loadedZones = {}
+local loadedGlobals = {}
 
 local function log(message)
     if ApocalypseIpl.debug then
@@ -8,6 +9,7 @@ end
 
 local function activateZone(name, zone)
     if not ApocalypseIpl.enabled then return end
+    if zone.enabled == false then return end
     if loadedZones[name] then return end
 
     for _, ipl in ipairs(zone.removeIpls or {}) do
@@ -36,7 +38,29 @@ local function activateZone(name, zone)
     log(('activated %s; interior found: %s'):format(name, foundInterior))
 end
 
+local function activateGlobal(name, group)
+    if group.enabled == false or loadedGlobals[name] then return end
+
+    for _, ipl in ipairs(group.removeIpls or {}) do
+        if IsIplActive(ipl) then
+            RemoveIpl(ipl)
+        end
+    end
+    for _, ipl in ipairs(group.ipls or {}) do
+        if not IsIplActive(ipl) then
+            RequestIpl(ipl)
+        end
+    end
+
+    loadedGlobals[name] = true
+    log(('activated global IPL group %s'):format(name))
+end
 CreateThread(function()
+    if ApocalypseIpl.enabled then
+        for name, group in pairs(ApocalypseIpl.globals or {}) do
+            activateGlobal(name, group)
+        end
+    end
     while true do
         if ApocalypseIpl.enabled then
             local playerCoords = GetEntityCoords(PlayerPedId())

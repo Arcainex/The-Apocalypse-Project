@@ -1,5 +1,7 @@
 # The Apocalypse Project
 
+[![Buy Me a Coffee](https://img.shields.io/badge/%E2%98%95%20Buy%20Me%20a%20Coffee-Support%20the%20Project-FFDD00?style=for-the-badge)](https://buymeacoffee.com/xanderptv)
+
 The Apocalypse Project aims to create the most immersive post-apocalyptic FREE map for FiveM.
 Some of the maps inside are found on GTA V Mods and they were converted to YMAP.
 The authors are credited down below.
@@ -70,6 +72,8 @@ Implemented in this release:
 - roosybigmods / Ultimate ShotHD — The Walking Dead Inspired: Zombie Survival Map
 - ManuGammer — Metro Apocalypse: The Last of Us and The Division
 - RDK_Ulman — VEST Military Base in the Desert
+- 2ManyYears — 2 Many Years: Bridge and The Lost
+- Den Edwin — Last Of Us Map 1 and Map 2
 
 Approved sources currently being audited or converted:
 

@@ -70,6 +70,8 @@ Implemented in this release:
 - roosybigmods / Ultimate ShotHD — The Walking Dead Inspired: Zombie Survival Map
 - ManuGammer — Metro Apocalypse: The Last of Us and The Division
 - RDK_Ulman — VEST Military Base in the Desert
+- 2ManyYears — 2 Many Years: Bridge and The Lost
+- Den Edwin — Last Of Us Map 1 and Map 2
 
 Approved sources currently being audited or converted:
 
