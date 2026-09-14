@@ -30,6 +30,9 @@ local function activateZone(name, zone)
             foundInterior = true
             PinInteriorInMemory(interior)
             LoadInterior(interior)
+            if zone.forceInteriorActive then
+                SetInteriorActive(interior, true)
+            end
             RefreshInterior(interior)
         end
     end
@@ -37,6 +40,7 @@ local function activateZone(name, zone)
     loadedZones[name] = true
     log(('activated %s; interior found: %s'):format(name, foundInterior))
 end
+
 
 local function activateGlobal(name, group)
     if group.enabled == false or loadedGlobals[name] then return end

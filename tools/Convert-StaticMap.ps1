@@ -1,7 +1,8 @@
 param(
     [Parameter(Mandatory)] [string] $Source,
     [Parameter(Mandatory)] [string] $Destination,
-    [Parameter(Mandatory)] [ValidateSet('MapEditor','Menyoo')] [string] $Format
+    [Parameter(Mandatory)] [ValidateSet('MapEditor','Menyoo')] [string] $Format,
+    [switch] $NoPrune
 )
 
 $ErrorActionPreference = 'Stop'
@@ -42,18 +43,24 @@ $candidates = [Collections.Generic.List[object]]::new()
 if ($Format -eq 'MapEditor') {
     foreach ($item in @($xml.Map.Objects.MapObject | Where-Object { $_.Type -eq 'Prop' -and $_.Dynamic -ne 'true' })) {
         $hash = [int64]$item.Hash; if ($hash -lt 0) { $hash += 4294967296 }
-        $candidates.Add([pscustomobject]@{ Hash=[uint32]$hash; X=[double]$item.Position.X; Y=[double]$item.Position.Y; Z=[double]$item.Position.Z; QX=[double]$item.Quaternion.X; QY=[double]$item.Quaternion.Y; QZ=[double]$item.Quaternion.Z; QW=[double]$item.Quaternion.W })
+        # Map Editor stores its quaternion in the opposite entity space used by YMAP.
+        $qx=[double]$item.Quaternion.X; $qy=[double]$item.Quaternion.Y; $qz=[double]$item.Quaternion.Z; $qw=[double]$item.Quaternion.W
+        if ($qw -lt 0) { $qw = -$qw } else { $qx = -$qx; $qy = -$qy; $qz = -$qz }
+        $candidates.Add([pscustomobject]@{ Hash=[uint32]$hash; X=[double]$item.Position.X; Y=[double]$item.Position.Y; Z=[double]$item.Position.Z; QX=$qx; QY=$qy; QZ=$qz; QW=$qw })
     }
 } else {
     foreach ($item in @($xml.SpoonerPlacements.Placement | Where-Object { $_.Type -eq '3' -and $_.Attachment.isAttached -ne 'true' -and $_.IsVisible -ne 'false' })) {
-        $r = $item.PositionRotation; $yaw=[double]$r.Yaw*[math]::PI/180; $pitch=[double]$r.Pitch*[math]::PI/180; $roll=[double]$r.Roll*[math]::PI/180
+        $r = $item.PositionRotation
+        # Menyoo/Spooner stores a negated Roll/Pitch/Yaw vector which must be remapped
+        # through GTA's RotationYawPitchRoll before it becomes a YMAP quaternion.
+        $yaw=-[double]$r.Roll*[math]::PI/180; $pitch=-[double]$r.Pitch*[math]::PI/180; $roll=-[double]$r.Yaw*[math]::PI/180
         $cy=[math]::Cos($yaw/2); $sy=[math]::Sin($yaw/2); $cp=[math]::Cos($pitch/2); $sp=[math]::Sin($pitch/2); $cr=[math]::Cos($roll/2); $sr=[math]::Sin($roll/2)
         $hash = [convert]::ToUInt32(([string]$item.ModelHash).Substring(2),16)
-        $candidates.Add([pscustomobject]@{ Hash=$hash; X=[double]$r.X; Y=[double]$r.Y; Z=[double]$r.Z; QX=($sr*$cp*$cy-$cr*$sp*$sy); QY=($cr*$sp*$cy+$sr*$cp*$sy); QZ=($cr*$cp*$sy-$sr*$sp*$cy); QW=($cr*$cp*$cy+$sr*$sp*$sy) })
+        $candidates.Add([pscustomobject]@{ Hash=$hash; X=[double]$r.X; Y=[double]$r.Y; Z=[double]$r.Z; QX=($cy*$sp*$cr+$sy*$cp*$sr); QY=($sy*$cp*$cr-$cy*$sp*$sr); QZ=($cy*$cp*$sr-$sy*$sp*$cr); QW=($cy*$cp*$cr+$sy*$sp*$sr) })
     }
 }
 
-$accepted = @($candidates | Where-Object { !(Test-NearExisting $grid $_.X $_.Y $_.Z) })
+$accepted = if ($NoPrune) { @($candidates) } else { @($candidates | Where-Object { !(Test-NearExisting $grid $_.X $_.Y $_.Z) }) }
 $ymap = [CodeWalker.GameFiles.YmapFile]::new(); $ymap.Load([IO.File]::ReadAllBytes($template))
 @($ymap.RootEntities) | ForEach-Object { $ymap.RemoveEntity($_) | Out-Null }
 for ($i = 0; $i -lt $accepted.Count; $i++) {

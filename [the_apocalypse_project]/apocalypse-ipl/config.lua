@@ -57,6 +57,40 @@ ApocalypseIpl = {
                 vector3(-805.0, -135.0, 19.0),
             },
         },
+
+        metro_little_seoul = {
+            center = vector3(-482.0, -710.0, 22.0),
+            radius = 140.0,
+            -- Native station point retained for diagnostics; metro props are streamed locally.
+            ipls = {},
+            interiorPoints = {
+                vector3(-472.5, -710.859, 18.992),
+            },
+        },
+        abandoned_fib = {
+            center = vector3(116.0, -744.0, 110.0),
+            radius = 280.0,
+            -- Keep the native FIB shell active while the custom props are
+            -- spawned locally to prevent interior portal culling.
+            ipls = { 'FIBlobby' },
+            interiorPoints = {
+                vector3(116.0, -744.0, 45.8),
+                vector3(116.0, -744.0, 72.0),
+                vector3(116.0, -744.0, 110.0),
+                vector3(116.0, -744.0, 155.0),
+                vector3(116.0, -744.0, 205.0),
+                vector3(116.0, -744.0, 245.0),
+            },
+        },        pillbox_hospital = {
+            center = vector3(307.1680, -590.807, 43.280),
+            radius = 220.0,
+            -- Standard Pillbox Hill hospital restoration state.
+            ipls = { 'rc12b_hospitalinterior' },
+            removeIpls = { 'rc12b_default' },
+            interiorPoints = {
+                vector3(307.1680, -590.807, 43.280),
+            },
+        },
         oneil_ranch = {
             center = vector3(2450.0, 4975.0, 46.0),
             radius = 600.0,

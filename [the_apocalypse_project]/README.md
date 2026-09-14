@@ -72,6 +72,23 @@ Implemented in this release:
 - RDK_Ulman — VEST Military Base in the Desert
 - 2ManyYears — 2 Many Years: Bridge and The Lost
 - Den Edwin — Last Of Us Map 1 and Map 2
+- [Calplusprime India](https://www.gta5-mods.com/maps/post-apocalyptic-map) — Post Apocalyptic Map (Grand Senora Desert airbase safezone)
+- [MarkVince](https://www.gta5-mods.com/fr/maps/ls-canal-apocalypse_map-menyoo) — LS-Canal Apocalypse Map 2.2 (Menyoo)
+- [TJExtremeGaming](https://www.gta5-mods.com/fr/maps/woodberry-apocalypse) — Woodberry Apocalypse
+- [gazusquens](https://www.gta5-mods.com/fr/maps/realistic-abandoned-cabins-in-the-forest) — Abandoned Cabins in the Forest
+- [Patoche](https://www.gta5-mods.com/fr/maps/abandonned-village-fivem-sp-ready) — Abandoned Village
+- [Windows Media](https://www.gta5-mods.com/fr/maps/los-santos-beach-island-1-0-beta-coming-soon) — Abandoned Project Beta / Los Santos Beach Island
+- [EvoModdingTeam](https://www.gta5-mods.com/fr/maps/abandoned-apocalyptic-motel-add-on-ymap) — Abandoned Zombie Apocalyptic Motel
+- [War_Reporter](https://www.gta5-mods.com/fr/maps/abandoned-industrial-zone-menyoo) — Abandoned Industrial Zone
+- [Freddy89gf](https://www.gta5-mods.com/fr/maps/abandoned-houses-menyoo) — Abandoned Houses
+- [Mo5](https://www.gta5-mods.com/fr/maps/abandoned-fib-building) — Abandoned FIB Building
+- [Toom_KK](https://www.gta5-mods.com/fr/maps/abandoned-waterfall-th-menyoo) — Abandoned Junk Downstream of the Waterfall
+- [RAFI978](https://www.gta5-mods.com/fr/maps/abandoned-factory-map-editor-rafi978) — Abandoned Factory
+- [SimpleGamerDK](https://www.gta5-mods.com/fr/maps/boulevard-del-perro-abandoned) — Boulevard Del Perro Abandoned
+- [Touch of modding / Jérémie Dreux](https://www.gta5-mods.com/fr/maps/destroyed-building-sp-fivem) — Destroyed Building
+- [R001br](https://www.gta5-mods.com/fr/maps/lossantosdestroyed) — Los Santos Destroyed
+- [KyRoz](https://www.gta5-mods.com/fr/maps/the-railroad-destroyed-scene#comments_tab) — Destroyed Railroad Scene
+- [jackob48](https://www.gta5-mods.com/fr/maps/car-wrecks-on-highway/download/28693) — Car Wrecks on Highway
 
 Approved sources currently being audited or converted:
 
@@ -83,7 +100,7 @@ Approved sources currently being audited or converted:
 - Yougi — Military Checkpoint Vinewood Radio Tower
 - JohnnyMillion — Apocalypse Safebase
 
-Only static map placements are used from approved community sources. Runtime scripts, ASI/DLL files, peds, vehicles, and any conflicting nearby placements are excluded. Full source and implementation tracking is maintained in [MOD_INTAKE.md](MOD_INTAKE.md).
+Only static map placements are used from approved community sources. Runtime scripts, ASI/DLL files, peds, vehicles, and any conflicting nearby placements are excluded. Full source and implementation tracking is maintained locally and excluded from releases.
 (If you see your work in our project please contact me on Discord to add you to the credits — XanderP#6037)
 
 Thanks again to Savolent#1095 for this major update.
