@@ -45,6 +45,9 @@ ensure [the_apocalypse_project]
 
 #### Credits
 
+Project Management:
+- NoobyPiika (Project Manager, v1.0.6)
+
 Original GTA V Map Authors / Converters:
 - denedwin
 - miltonalves
@@ -104,3 +107,5 @@ Only static map placements are used from approved community sources. Runtime scr
 (If you see your work in our project please contact me on Discord to add you to the credits — XanderP#6037)
 
 Thanks again to Savolent#1095 for this major update.
+
+- NoobyPiika — Air1, END, Grove, PortCity, TheDefender and Casino Lot
