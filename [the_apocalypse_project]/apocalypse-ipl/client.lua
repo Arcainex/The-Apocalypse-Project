@@ -7,54 +7,125 @@ local function log(message)
     end
 end
 
+local function isAvailable(entry)
+    if entry.minBuild and GetGameBuildNumber() < entry.minBuild then
+        return false
+    end
+    if entry.dlc and not IsDlcPresent(joaat(entry.dlc)) then
+        return false
+    end
+    return true
+end
+
+local function requestMissingIpls(ipls)
+    for _, ipl in ipairs(ipls or {}) do
+        if not IsIplActive(ipl) then
+            RequestIpl(ipl)
+        end
+    end
+end
+
+local function waitForRequestedIpls(ipls, timeoutMs)
+    local deadline = GetGameTimer() + (timeoutMs or 5000)
+    repeat
+        local ready = true
+        for _, ipl in ipairs(ipls or {}) do
+            if not IsIplActive(ipl) then
+                ready = false
+                break
+            end
+        end
+        if ready then return true end
+        Wait(50)
+    until GetGameTimer() >= deadline
+    return false
+end
+
+local function waitForInterior(interior, timeoutMs)
+    if interior == 0 then return false end
+
+    PinInteriorInMemory(interior)
+    LoadInterior(interior)
+
+    local deadline = GetGameTimer() + (timeoutMs or 5000)
+    while not IsInteriorReady(interior) and GetGameTimer() < deadline do
+        Wait(50)
+    end
+
+    return IsInteriorReady(interior)
+end
+
 local function activateZone(name, zone)
     if not ApocalypseIpl.enabled then return end
     if zone.enabled == false then return end
-    if loadedZones[name] then return end
+    if not isAvailable(zone) then return end
+    local lastActivation = loadedZones[name]
+    if lastActivation then
+        if not zone.reconcileIntervalMs then return end
+        if GetGameTimer() - lastActivation < zone.reconcileIntervalMs then return end
+    end
 
     for _, ipl in ipairs(zone.removeIpls or {}) do
         if IsIplActive(ipl) then
             RemoveIpl(ipl)
         end
     end
-    for _, ipl in ipairs(zone.ipls) do
-        if not IsIplActive(ipl) then
-            RequestIpl(ipl)
-        end
-    end
+    requestMissingIpls(zone.ipls)
+    waitForRequestedIpls(zone.ipls, zone.iplTimeoutMs)
 
     local foundInterior = false
-    for _, point in ipairs(zone.interiorPoints) do
+    local interiorIds = {}
+    if zone.interiorId and zone.interiorId ~= 0 then
+        interiorIds[#interiorIds + 1] = zone.interiorId
+    end
+    for _, point in ipairs(zone.interiorPoints or {}) do
         local interior = GetInteriorAtCoords(point.x, point.y, point.z)
         if interior ~= 0 then
-            foundInterior = true
-            PinInteriorInMemory(interior)
-            LoadInterior(interior)
-            if zone.forceInteriorActive then
-                SetInteriorActive(interior, true)
+            local known = false
+            for _, interiorId in ipairs(interiorIds) do
+                if interiorId == interior then
+                    known = true
+                    break
+                end
             end
-            RefreshInterior(interior)
+            if not known then interiorIds[#interiorIds + 1] = interior end
         end
     end
 
-    loadedZones[name] = true
+    for _, interior in ipairs(interiorIds) do
+        foundInterior = true
+        waitForInterior(interior, zone.interiorTimeoutMs)
+        if zone.forceInteriorActive then
+            SetInteriorActive(interior, true)
+        end
+        for _, entitySet in ipairs(zone.disableEntitySets or {}) do
+            if IsInteriorEntitySetActive(interior, entitySet) then
+                DeactivateInteriorEntitySet(interior, entitySet)
+            end
+        end
+        for _, entitySet in ipairs(zone.entitySets or {}) do
+            if not IsInteriorEntitySetActive(interior, entitySet) then
+                ActivateInteriorEntitySet(interior, entitySet)
+            end
+        end
+        RefreshInterior(interior)
+    end
+
+    loadedZones[name] = GetGameTimer()
     log(('activated %s; interior found: %s'):format(name, foundInterior))
 end
 
 
 local function activateGlobal(name, group)
     if group.enabled == false or loadedGlobals[name] then return end
+    if not isAvailable(group) then return end
 
     for _, ipl in ipairs(group.removeIpls or {}) do
         if IsIplActive(ipl) then
             RemoveIpl(ipl)
         end
     end
-    for _, ipl in ipairs(group.ipls or {}) do
-        if not IsIplActive(ipl) then
-            RequestIpl(ipl)
-        end
-    end
+    requestMissingIpls(group.ipls)
 
     loadedGlobals[name] = true
     log(('activated global IPL group %s'):format(name))
@@ -69,7 +140,7 @@ CreateThread(function()
         if ApocalypseIpl.enabled then
             local playerCoords = GetEntityCoords(PlayerPedId())
             for name, zone in pairs(ApocalypseIpl.zones) do
-                if not loadedZones[name] and #(playerCoords - zone.center) <= zone.radius then
+                if #(playerCoords - zone.center) <= zone.radius then
                     activateZone(name, zone)
                 end
             end
@@ -86,11 +157,11 @@ RegisterCommand('tapiplstatus', function()
 
     for name, zone in pairs(ApocalypseIpl.zones) do
         local details = {}
-        for _, point in ipairs(zone.interiorPoints) do
+        for _, point in ipairs(zone.interiorPoints or {}) do
             local interior = GetInteriorAtCoords(point.x, point.y, point.z)
             details[#details + 1] = ('%d loaded=%s'):format(interior, interior ~= 0 and IsInteriorReady(interior) or false)
         end
-        print(('[apocalypse-ipl] %s active=%s interiors=[%s]'):format(name, loadedZones[name] == true, table.concat(details, ', ')))
+        print(('[apocalypse-ipl] %s active=%s interiors=[%s]'):format(name, loadedZones[name] ~= nil, table.concat(details, ', ')))
     end
 end, false)
 

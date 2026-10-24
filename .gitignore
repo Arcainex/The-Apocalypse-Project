@@ -1,5 +1,6 @@
 # Local working backups. Never ship these with the resource.
 /archive/
+/backups/
 PropsPreview.html
 
 tools/.runtime/
@@ -29,6 +30,7 @@ tools/.runtime/
 /docs/
 
 # Map-editor projects and unfinished source material.
+/WIP/
 /\[the_apocalypse_project\]/WIP/
 **/_work/
 **/disabled_broken_ytd/
@@ -46,4 +48,10 @@ Thumbs.db
 /[[]the_apocalypse_project[]]/Unused Maps/
 bs19_video_edits.py
 tmp/imagegen/freeway-road001-prompt.txt
+
+# Local media production and unpacked texture workspaces.
+/marketing/
+/Videos/
+/build-*/
+/cs[0-9]_*/
 docs/road-texture-phases.md

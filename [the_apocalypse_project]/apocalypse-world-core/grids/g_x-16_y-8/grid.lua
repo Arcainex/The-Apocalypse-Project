@@ -1,0 +1,92 @@
+ApocalypseWorld.Grids['g_x-16_y-8'] = {
+    bounds = { minX = -1600.0, minY = -800.0, maxX = -1500.0, maxY = -700.0 },
+    stage = 'review',
+    wrecks = {
+        {
+            id = 'wreck_01', model = 'prop_rub_carwreck_2',
+            coords = vector3(-1583.0000, -722.7500, 17.6250),
+            heading = 224.00, rotation = vector3(0.00, 0.00, 224.00),
+            approved = false, reviewOnly = true,
+            snapToGround = true,
+        },
+        {
+            id = 'wreck_02', model = 'prop_rub_carwreck_3',
+            coords = vector3(-1563.2500, -739.2500, 17.8750),
+            heading = 242.00, rotation = vector3(0.00, 0.00, 242.00),
+            approved = false, reviewOnly = true,
+            snapToGround = true,
+        },
+        {
+            id = 'wreck_03', model = 'prop_rub_carwreck_11',
+            coords = vector3(-1545.5000, -755.0000, 18.1250),
+            heading = 51.00, rotation = vector3(0.00, 0.00, 51.00),
+            approved = false, reviewOnly = true,
+            snapToGround = true,
+        },
+    },
+    clutter = {
+        {
+            id = 'tyre_01', model = 'prop_rub_tyre_01',
+            coords = vector3(-1581.2000, -725.4000, 17.6500),
+            heading = 235.00, rotation = vector3(90.00, 0.00, 235.00),
+            approved = false, reviewOnly = true,
+            collision = true,
+        },
+        {
+            id = 'litter_01', model = 'prop_rub_litter_03',
+            coords = vector3(-1584.5000, -727.0000, 17.6600),
+            heading = 221.00, rotation = vector3(0.00, 0.00, 221.00),
+            approved = false, reviewOnly = true,
+            collision = false,
+        },
+        {
+            id = 'litter_02', model = 'prop_rub_litter_04',
+            coords = vector3(-1577.0000, -727.0000, 17.7000),
+            heading = 230.00, rotation = vector3(0.00, 0.00, 230.00),
+            approved = false, reviewOnly = true,
+            collision = false,
+        },
+        {
+            id = 'tyre_02', model = 'prop_rub_tyre_02',
+            coords = vector3(-1560.2000, -740.7000, 17.9000),
+            heading = 18.00, rotation = vector3(90.00, 0.00, 18.00),
+            approved = false, reviewOnly = true,
+            collision = true,
+        },
+        {
+            id = 'litter_03', model = 'prop_rub_litter_03',
+            coords = vector3(-1565.7000, -743.0000, 17.9200),
+            heading = 239.00, rotation = vector3(0.00, 0.00, 239.00),
+            approved = false, reviewOnly = true,
+            collision = false,
+        },
+        {
+            id = 'litter_04', model = 'prop_rub_litter_04',
+            coords = vector3(-1558.0000, -743.5000, 17.9500),
+            heading = 211.00, rotation = vector3(0.00, 0.00, 211.00),
+            approved = false, reviewOnly = true,
+            collision = false,
+        },
+        {
+            id = 'tyre_03', model = 'prop_rub_tyre_01',
+            coords = vector3(-1544.0000, -758.4000, 18.1200),
+            heading = 185.00, rotation = vector3(90.00, 0.00, 185.00),
+            approved = false, reviewOnly = true,
+            collision = true,
+        },
+        {
+            id = 'litter_05', model = 'prop_rub_litter_03',
+            coords = vector3(-1549.5000, -757.3000, 18.1000),
+            heading = 50.00, rotation = vector3(0.00, 0.00, 50.00),
+            approved = false, reviewOnly = true,
+            collision = false,
+        },
+        {
+            id = 'litter_06', model = 'prop_rub_litter_04',
+            coords = vector3(-1543.0000, -751.2000, 18.1000),
+            heading = 71.00, rotation = vector3(0.00, 0.00, 71.00),
+            approved = false, reviewOnly = true,
+            collision = false,
+        },
+    }
+}

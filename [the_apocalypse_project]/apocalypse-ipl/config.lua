@@ -36,8 +36,96 @@ ApocalypseIpl = {
                 'dt1_21_prop_lift_on', 'cs5_4_trains',
             },
         },
+        bob74_cayo_fixes = {
+            minBuild = 2189,
+            ipls = {
+                'h4_ch2_mansion_final',
+            },
+        },
+        bob74_drug_wars_fixes = {
+            minBuild = 2802,
+            ipls = {
+                'xm3_collision_fixes',
+                'xm3_sum2_fix',
+                'xm3_security_fix',
+            },
+        },
+        bob74_chop_shop_fixes = {
+            minBuild = 3095,
+            ipls = {
+                'm23_2_acp_collision_fixes_01',
+                'm23_2_acp_collision_fixes_02',
+                'm23_2_tug_collision',
+                'm23_2_hei_yacht_collision_fixes',
+                'm23_2_vinewood_garage',
+            },
+        },
+        bob74_bounties_fixes = {
+            minBuild = 3258,
+            ipls = {
+                'm24_1_legacyfixes',
+                'm24_1_pizzasigns',
+            },
+        },
+        bob74_agents_fixes = {
+            minBuild = 3407,
+            ipls = {
+                'm24_2_legacy_fixes',
+                'm24_2_mp2024_02_additions',
+            },
+        },
+        bob74_money_fronts_fixes = {
+            dlc = 'mp2025_01',
+            ipls = {
+                'm25_1_legacy_fixes',
+                'm25_1_mp2025_01_additions',
+                'm25_1_bobcat',
+                'm25_1_garage',
+                'm25_1_quikpharma',
+            },
+        },
+        bob74_mansion_fixes = {
+            dlc = 'mp2025_02',
+            ipls = {
+                'm25_2_knoway_sign',
+            },
+        },
+        bob74_kortz_fixes = {
+            dlc = 'mp2026_01',
+            ipls = {
+                'm26_1_mp2026_01_additions_critical_0',
+            },
+        },
     },
     zones = {
+        pdm_showroom = {
+            center = vector3(-47.16170, -1115.3327, 26.5),
+            radius = 300.0,
+            -- Reassert the showroom state because mission/framework resources can
+            -- change the same interior props after this resource has started.
+            reconcileIntervalMs = 10000,
+            interiorTimeoutMs = 5000,
+            ipls = {
+                'shr_int',
+                'reh_simeonfix',
+            },
+            interiorId = 7170,
+            interiorPoints = {
+                vector3(-47.16170, -1115.3327, 26.5),
+                vector3(-50.2248, -1098.8325, 26.049742),
+            },
+            disableEntitySets = {
+                'csr_inMission',
+                'csr_afterMissionA',
+                'csr_afterMissionB',
+                'shutter_closed',
+            },
+            entitySets = {
+                'csr_beforeMission',
+                'shutter_open',
+            },
+            forceInteriorActive = true,
+        },
         arena_real = {
             center = vector3(-257.98, -2024.03, 29.15),
             radius = 175.0,

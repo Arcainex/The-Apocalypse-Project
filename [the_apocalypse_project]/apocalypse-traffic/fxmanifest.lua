@@ -1,6 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
 author 'The Apocalypse Project'
-description 'TAP traffic-light texture weathering pilot'
-version '0.1.0'
+description 'Map-wide degraded traffic lights, street lights and lighting poles'
+version '1.0.8'
 this_is_a_map 'yes'

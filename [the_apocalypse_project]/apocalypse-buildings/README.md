@@ -1,15 +1,23 @@
-# Apocalypse Buildings — CNT pilot
+# Apocalypse Buildings
 
-Texture-only trial for `ch2_04_build03b`. Replaces the window and door atlases in `ch2_04_buildings.ytd` and `ch2_04_buildings+hi.ytd`. Base specular maps are darkened to reduce the clean glossy finish. All other dictionary members are preserved.
+Apocalyptic facade replacements for selected Los Santos buildings and skyscrapers. Original atlas dimensions, compression, mip chains and UV layouts are retained.
 
-The original atlas layout is retained. Procedural damage adds dirt streaks, frame corrosion, cracked panes and small seam moss patches. There are no model, placement, collision or installed GTA V archive changes. Shared texture effects on other buildings are intentional.
+## Current coverage
+
+- `ch2_04_build03b`: broken-glass impact atlas, paired embedded relief normal, reduced glass specular response and dark chipped CNT sign lettering. The sign edit is confined to its own UV rectangle; other signs are retained.
+- `dt1_05_build1_damage`: fallen-FIB window damage with paired normal/specular maps and a matched glass band in the distance atlas. The existing fallen geometry and collision are retained; this is a material pass, not a structural rebuild.
+- `dt1_11_dt1_tower`: complete near facade, embedded materials, HI overrides, LOD facade and broken nighttime emissive lighting.
+- `hw1_04`: complete near and HI facade replacements, distance-matched wall and ground LODs, damaged shopfront glazing, a closed-shelter billboard and mostly blacked-out nighttime emissive windows.
+
+The Downtown tower pass adds heavy grime, concrete discoloration, corrosion, cracked glazing, irregular dark window groups and reduced gloss. Road, plaza and unrelated shared materials are preserved.
 
 ## Test
 
-In the server console: `refresh`, then `ensure apocalypse-buildings`. Reconnect FiveM. Inspect the CNT tower near the user's test viewpoint 762.81, 171.35, 81.77. The CodeWalker screenshot identifies the model at 745.5779, 222.624146, 116.71917; do not teleport to its model origin inside the building.
+In the server console: `refresh`, then `ensure apocalypse-buildings`. Reconnect FiveM.
 
-Compare the same view with the resource enabled/disabled, reconnecting between tests. Inspect doors, windows, wet/day/night appearance and near/far transitions. The distant LOD, emissive overlays and original normal maps are not changed in this pilot; distant or nighttime appearance may remain cleaner.
+- CNT tower: inspect near `762.81, 171.35, 81.77`.
+- Fallen FIB: inspect the tilted tower near `-875.10, -728.97, 83.15`, including aerial and street-level views.
+- Downtown tower: inspect around `-75.0, -818.0`; test at street level and from an aircraft.
+- Hawick block: inspect the `hw1_04` block at street level, then move far enough away to verify its wall, ground and nighttime emissive transitions.
 
-This is a local testing package, not a public-release-ready distribution. Review redistribution rights for retained original GTA material before publishing. No commits or pushes are part of deployment.
-
-Atlas comparisons and member-level validation report are in `output/building-pilot-v1` at the repository root. Stop the resource and reconnect to undo the texture override; no game archive restoration is needed.
+Compare the same views with the resource enabled and disabled, reconnecting between tests. Inspect wet/day/night appearance, close-to-LOD transitions and helicopter approaches. Stop the resource and reconnect to undo the overrides; no installed GTA archive is modified.
