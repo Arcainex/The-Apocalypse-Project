@@ -1,6 +1,6 @@
 # Apocalypse Buildings
 
-Apocalyptic facade replacements for selected Los Santos buildings and skyscrapers. Original atlas dimensions, compression, mip chains and UV layouts are retained.
+Apocalyptic facade replacements for selected Los Santos buildings and skyscrapers. Texture names, compression and UV layouts are retained. Selected large atlas members are resized with matching mip chains to keep streaming memory within budget.
 
 ## Current coverage
 
