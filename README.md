@@ -6,7 +6,7 @@ The Apocalypse Project aims to create the most immersive post-apocalyptic FREE m
 Some of the maps inside are found on GTA V Mods and they were converted to YMAP.
 The authors are credited down below.
 
-**v1.0.9 preview:** damaged tower interiors, heavier CNT decay, weathered streets and fuel stations, plus PDM/IPL and texture-streaming fixes. See the [release notes](RELEASE_NOTES.md). The new structural work is available for testing; the street-dressing pilot remains disabled.
+**v1.0.9 preview:** damaged tower interiors, heavier CNT decay, weathered streets and fuel stations, plus PDM/IPL and texture-streaming fixes. The new structural work is available for testing; the street-dressing pilot remains disabled.
 
 Thanks to Savolent, we now have a fully working version of this project for communities to work. His Discord is listed down in the credits.
 
