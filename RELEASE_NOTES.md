@@ -21,19 +21,3 @@ This update gives more of the city the worn, abandoned look the project has been
 This is a preview build. Offline asset checks have passed, but the new structural changes still need live FiveM collision, bullet, floor-contact, distance-transition and performance testing. Back up your current resources, update the matching map folders together and reconnect before comparing them.
 
 The 100 m world-core pilot is included for review but remains disabled. New street placements, the six-building expansion and the fallen-FIB/Wiwang structural prototypes are not part of this release.
-
-## Model previews
-
-These images are renders of the actual map assets, not gameplay screenshots. In-game lighting will differ.
-
-### Maze impact
-
-![Maze Tower impact opening](showcase/v1.0.9/maze-impact.png)
-
-### Aircraft debris
-
-![Aircraft fragment inside the Maze impact](showcase/v1.0.9/maze-aircraft.png)
-
-### CNT decay
-
-![CNT facade and lettering decay](showcase/v1.0.9/cnt-decay.png)

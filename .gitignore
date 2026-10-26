@@ -55,3 +55,10 @@ tmp/imagegen/freeway-road001-prompt.txt
 /build-*/
 /cs[0-9]_*/
 docs/road-texture-phases.md
+
+# Internal previews, handoffs and development checklists.
+/showcase/
+/work/
+**/TESTING.md
+**/CLAUDE*.md
+**/INTERNAL*.md
